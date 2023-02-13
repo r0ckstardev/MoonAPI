@@ -33,4 +33,4 @@ const ServiceModel: Schema = new Schema({
 });
 
 type ServiceModel = Model<Service & Document, {}>;
-export const Service: ServiceModel = model<Service & Document>('Service', ServiceModel      );
+export const Service: ServiceModel = model<Service & Document>('Service', ServiceModel);

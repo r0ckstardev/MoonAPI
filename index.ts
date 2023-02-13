@@ -1,5 +1,4 @@
 import express from "npm:express";
-import chalk from "npm:chalk";
 import handleUsers  from "./routes/user.ts";
 import handleServices  from "./routes/service.ts";
 import dbConnection from "./utils/dbConnection.ts";
@@ -8,7 +7,7 @@ import { success } from "./utils/contsants.ts";
 
 const app = express();
 
-const PORT = "3000" || "3000";
+const PORT = "3000";
 
 app.get("/", (req: any, res: any, next: any) => {
     res.send("Api is Running.");
