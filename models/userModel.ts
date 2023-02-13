@@ -1,4 +1,5 @@
 import { Document, model, Model, Schema } from 'npm:mongoose';
+import { infoColor } from '../utils/contsants.ts';
 
 export interface User extends Document {
    /**
@@ -81,3 +82,7 @@ const userSchema: Schema = new Schema({
 
 type UserModel = Model<User & Document, {}>;
 export const User: UserModel = model<User & Document>('User', userSchema);
+
+User.createCollection().then(function (collection) {
+  console.log(`${infoColor("CREATED")}: Created collection User.`)
+});

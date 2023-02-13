@@ -1,4 +1,5 @@
 import { Document, model, Model, Schema } from 'npm:mongoose';
+import { infoColor } from '../utils/contsants.ts';
 
 export interface Service extends Document {
     _id: string;
@@ -34,3 +35,7 @@ const ServiceModel: Schema = new Schema({
 
 type ServiceModel = Model<Service & Document, {}>;
 export const Service: ServiceModel = model<Service & Document>('Service', ServiceModel);
+
+Service.createCollection().then(function (collection) {
+    console.log(`${infoColor("CREATED")}: Created collection Service.`)
+})
