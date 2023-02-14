@@ -11,12 +11,12 @@ const app = express();
 
 const PORT = "3000";
 
-app.get("/", (req: any, res: any, next: any) => {
+app.get("/api", (req: any, res: any, next: any) => {
     res.send("Api is Running.");
 });
 
-app.use("/users", handleUsers);
-app.use("/services", handleServices);
+app.use("/api/users", handleUsers);
+app.use("/api/services", handleServices);
 
 app.listen(PORT, () => {
     console.log(`[${success("LISTENING")}]: Listening on port 3000.`);

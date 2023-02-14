@@ -24,3 +24,7 @@ export async function returnUsers(req: any, res: any, next: any) {
 export async function returnUser(req: any, res: any, next: any) {
     
 }
+
+export async function createUser(req: any, res: any, next: any) {
+
+}

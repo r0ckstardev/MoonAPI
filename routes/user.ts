@@ -1,4 +1,4 @@
-import { wipeUsers, deleteUser, editUser, returnUsers, returnUser } from "../controllers/user.controller.ts";
+import { wipeUsers, deleteUser, editUser, returnUsers, returnUser, createUser } from "../controllers/user.controller.ts";
 
 export default async function handleUsers(req:any, res: any, next: any) {
     if(req.url === "/delete") {
@@ -11,5 +11,7 @@ export default async function handleUsers(req:any, res: any, next: any) {
         returnUsers(req, res, next);
     } else if(req.url === "/view/:id") {
         returnUser(req, res, next);
+    } else if(req.url === "/auth" && req.type === "POST") {
+        createUser(req, res, next)
     }
 }
